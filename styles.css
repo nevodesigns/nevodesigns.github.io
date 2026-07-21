@@ -197,7 +197,6 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
 .about-photo img { filter: grayscale(35%); }
 .comp-block {
   border: 1px solid var(--line-strong);
-  border-left: 3px solid var(--accent);
   background: var(--panel);
   padding: 26px 30px;
   margin-bottom: 32px;
@@ -361,7 +360,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
 }
 
 /* Timeline */
-.timeline { list-style: none; border-left: 1px solid var(--line-strong); }
+.timeline { list-style: none; }
 .timeline li {
   position: relative;
   display: grid;
@@ -373,7 +372,7 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
 .timeline li::before {
   content: "";
   position: absolute;
-  left: -5px;
+  left: 0;
   top: 7px;
   width: 9px;
   height: 9px;
