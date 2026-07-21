@@ -312,3 +312,50 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
 @media (max-width: 560px) {
   .sheet { padding: 22px 20px; }
 }
+
+/* Studio: services schedule */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  margin-bottom: 36px;
+}
+.services {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+}
+.services th {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  text-align: left;
+  padding: 16px 20px;
+  border-bottom: 2px solid var(--accent-dim);
+}
+.services td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.services tbody tr:last-child td { border-bottom: none; }
+.services td:nth-child(2) { font-family: var(--display); font-weight: 500; white-space: nowrap; }
+.services td:nth-child(3) { color: var(--ink-dim); }
+.mono-cell {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.studio-cta { align-items: center; margin-bottom: 28px; }
+.cta-note {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-dim);
+}
+.footnote {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--ink-dim);
+}
