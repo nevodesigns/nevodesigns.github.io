@@ -237,3 +237,78 @@ h1, h2, h3 { font-family: var(--display); line-height: 1.1; }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-width: 380px; }
 }
+
+/* Projects: drawing sheets */
+.section-intro { color: var(--ink-dim); margin-bottom: 44px; max-width: 62ch; }
+
+.sheet {
+  position: relative;
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  padding: 30px 34px 28px;
+  margin-bottom: 28px;
+}
+/* Inner frame, like the double border of a drawing sheet */
+.sheet::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid var(--line);
+  pointer-events: none;
+}
+.sheet > * { position: relative; }
+
+.sheet-head {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+.sheet-tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+  padding: 6px 12px;
+  background: var(--bg);
+  white-space: nowrap;
+}
+/* Dimension line with end ticks */
+.sheet-ticks {
+  flex: 1;
+  height: 1px;
+  background: var(--line-strong);
+  position: relative;
+}
+.sheet-ticks::before,
+.sheet-ticks::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 1px;
+  height: 11px;
+  background: var(--line-strong);
+}
+.sheet-ticks::before { left: 0; }
+.sheet-ticks::after { right: 0; }
+
+.sheet h3 {
+  font-size: clamp(21px, 2.8vw, 28px);
+  margin-bottom: 14px;
+}
+.sheet-desc { color: var(--ink-dim); max-width: 70ch; margin-bottom: 18px; }
+.sheet-tags {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.sheet-links { font-family: var(--mono); font-size: 13.5px; }
+.sheet-links a { padding: 2px 0; }
+.sheet-links-dim { color: var(--ink-dim); }
+
+@media (max-width: 560px) {
+  .sheet { padding: 22px 20px; }
+}
