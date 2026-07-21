@@ -496,3 +496,14 @@ footer {
   .title-block { margin-left: 0; width: 100%; }
   .title-block td { min-width: 0; }
 }
+
+/* Reveal treatment: applied only when JS runs and motion is allowed */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.js-reveal .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
