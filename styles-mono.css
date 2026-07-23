@@ -1,0 +1,86 @@
+/* NEVO Designs, portfolio rev 2.1. Monochrome technical drafting.
+   No colour anywhere. Hierarchy comes from type scale, weight, rule
+   thickness, and space. Sections alternate dark and light down the page. */
+
+:root {
+  /* surfaces */
+  --black: #000000;
+  --panel-dark: #0A0A0A;
+  --paper: #FFFFFF;
+  --paper-warm: #F2F0EC;
+
+  /* grey ramp, used deliberately */
+  --g900: #111111;
+  --g700: #444444;
+  --g500: #777777;
+  --g300: #AAAAAA;
+  --g100: #DDDDDD;
+
+  /* on-dark equivalents */
+  --d-ink: #FFFFFF;
+  --d-body: #EEEEEE;
+  --d-label: #999999;
+  --d-dim: #555555;
+  --d-rule: #333333;
+
+  --mono: "JetBrains Mono", ui-monospace, "Courier New", monospace;
+  --display: "Space Grotesk", system-ui, sans-serif;
+  --body: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --pad: clamp(20px, 5vw, 76px);
+  --measure: 62ch;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+
+body {
+  background: var(--black);
+  color: var(--d-ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--d-ink); color: var(--black); }
+
+img, video { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* ---------- type scale ---------- */
+
+h1, h2, h3 { font-family: var(--display); font-weight: 700; }
+
+/* every label, number, tag, date, caption */
+.eyebrow, .section-label, .sheet-tag, .sheet-tags, .comp-title, .status-line,
+.tl-tag, .lg-label, .lg-value, .mono-cell, .cta-note, .footnote, .copyright,
+.title-block, .brand, .btn, .services th, .dimline i, .sheet-links {
+  font-family: var(--mono);
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 100;
+  background: var(--paper);
+  color: var(--black);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  padding: 12px 18px;
+  transition: top 0.15s ease;
+}
+.skip-link:focus { top: 12px; text-decoration: none; }
