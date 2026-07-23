@@ -84,3 +84,53 @@ h1, h2, h3 { font-family: var(--display); font-weight: 700; }
   transition: top 0.15s ease;
 }
 .skip-link:focus { top: 12px; text-decoration: none; }
+
+/* ---------- inverted bands ---------- */
+/* Alternation is the device that stops monochrome reading flat:
+   hero dark, about light, projects dark, studio light, timeline dark,
+   contact light, title block dark. Hero and projects both land on true
+   black, separated by a light band, so each hits fresh. */
+
+section { padding: clamp(64px, 10vw, 132px) var(--pad); position: relative; }
+.section-inner { max-width: 1120px; margin: 0 auto; position: relative; z-index: 1; }
+
+/* dark bands */
+.hero, #projects, #timeline {
+  background: var(--black);
+  color: var(--d-ink);
+  border-top: 2px solid var(--d-rule);
+}
+#timeline { background: var(--panel-dark); }
+.hero { border-top: none; }
+
+/* light bands */
+#about, #contact {
+  background: var(--paper-warm);
+  color: var(--g900);
+  border-top: 2px solid var(--g100);
+}
+#studio {
+  background: var(--paper);
+  color: var(--g900);
+  border-top: 2px solid var(--g100);
+}
+
+/* fine drafting grid, quiet on light, denser in projects */
+.hero::before, #projects::before, #timeline::before,
+#about::before, #studio::before, #contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(currentColor 0.5px, transparent 0.5px),
+    linear-gradient(90deg, currentColor 0.5px, transparent 0.5px);
+  background-size: 64px 64px;
+  opacity: 0.07;
+}
+#projects::before { background-size: 32px 32px; opacity: 0.09; }
+#about::before, #studio::before, #contact::before { opacity: 0.05; }
+
+/* body copy colour per band */
+.hero .support, #projects .section-intro, #timeline p { color: var(--d-body); }
+#about .about-body p, #studio .section-intro, #contact .section-intro { color: var(--g700); }
