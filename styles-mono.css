@@ -308,3 +308,42 @@ footer { background: var(--black); border-top: 2px solid var(--d-rule); padding:
 .title-block { border-collapse: collapse; border: 1px solid var(--d-ink); margin-left: auto; }
 .title-block td { border: 0.5px solid var(--d-rule); font-size: 11px; letter-spacing: 0.1em; color: var(--d-ink); padding: 11px 20px 10px; min-width: 178px; }
 .title-block td span { display: block; font-size: 9px; letter-spacing: 0.22em; color: var(--d-label); margin-bottom: 5px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { max-width: 380px; }
+  .link-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .timeline li { grid-template-columns: 1fr; gap: 6px; }
+  .footer-inner { flex-direction: column; align-items: stretch; }
+  .title-block { margin-left: 0; width: 100%; }
+  .title-block td { min-width: 0; }
+  .sheet { padding: 24px 20px; }
+  .sheet-head { gap: 12px; }
+}
+@media (max-width: 480px) {
+  .link-grid { grid-template-columns: 1fr; }
+  .hero h1 { letter-spacing: -0.02em; }
+  .dimline i { font-size: 9.5px; letter-spacing: 0.14em; }
+}
+@media (max-width: 380px) {
+  .sheet-head { flex-wrap: wrap; }
+  .sheet-ticks { display: none; }
+}
+
+/* ---------- reveal, motion respected ---------- */
+.js-reveal .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* print: the drawing, on paper */
+@media print {
+  .hero, #projects, #timeline, footer, .topbar { background: #fff; color: #000; }
+  .sheet, .title-block td { border-color: #000; }
+  section::before { display: none; }
+}
