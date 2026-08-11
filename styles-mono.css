@@ -261,7 +261,23 @@ section { padding: clamp(64px, 10vw, 132px) var(--pad); position: relative; }
 .sheet-tags { font-size: 11.5px; letter-spacing: 0.16em; color: var(--d-label); padding-top: 16px; border-top: 0.5px solid var(--d-rule); margin-bottom: 12px; }
 .sheet-links { font-size: 12.5px; letter-spacing: 0.06em; }
 .sheet-links a { text-decoration: underline; text-underline-offset: 4px; }
-.sheet-links-dim { color: var(--d-dim); }
+/* --d-dim is 2.66:1 on the sheet panel, below WCAG AA. These two carry real
+   information (submission status, deployment state), so they use --d-label at
+   6.95:1 instead of the decorative dim tone. */
+.sheet-links-dim { color: var(--d-label); }
+/* deployment stamp, read like a drawing status box: only LIVE is inverted, so a
+   verified running deployment is the one thing that draws the eye */
+.sheet-status {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  padding: 6px 11px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.sheet-status-live { background: var(--d-ink); color: var(--black); border-color: var(--d-ink); }
+.sheet-status-dim { color: var(--d-label); }
+.sheet-note { font-size: 11.5px; letter-spacing: 0.06em; color: var(--d-label); margin-top: 9px; }
 
 /* ---------- studio ---------- */
 .table-wrap { overflow-x: auto; border: 1px solid var(--g900); margin-bottom: 36px; }
@@ -322,7 +338,9 @@ footer { background: var(--black); border-top: 2px solid var(--d-rule); padding:
   .title-block { margin-left: 0; width: 100%; }
   .title-block td { min-width: 0; }
   .sheet { padding: 24px 20px; }
-  .sheet-head { gap: 12px; }
+  /* the sheet tag and the status stamp are both nowrap, so on a narrow sheet let
+     the head wrap rather than let the stamp run past the border */
+  .sheet-head { gap: 12px; flex-wrap: wrap; }
 }
 @media (max-width: 480px) {
   .link-grid { grid-template-columns: 1fr; }
