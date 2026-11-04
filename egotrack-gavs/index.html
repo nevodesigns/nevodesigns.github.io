@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EgoTrack: an AI finance-readiness agent for micro businesses</title>
+<meta name="description" content="EgoTrack organises a micro business's records, shows what is missing and prepares what a credit option or scheme asks for. The owner approves every step. Idea for the GAVS Hackathon, theme MSME Finance and Compliance.">
+<meta name="theme-color" content="#f5faf6">
+<meta property="og:title" content="EgoTrack: an AI finance-readiness agent for micro businesses">
+<meta property="og:description" content="From scattered records to a finance-ready file. The agent prepares, the owner decides. GAVS Hackathon idea.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nevodesigns.github.io/egotrack-gavs/">
+<link rel="canonical" href="https://nevodesigns.github.io/egotrack-gavs/">
+<style>
+:root{--ink:#0b1a12;--paper:#f5faf6;--sheet:#ffffff;--muted:#4a5f53;--rule:#b7cbbd;--green:#0b7d47;--wash:#e1f4e8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--green)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;background:var(--sheet);padding:8px 12px;border:1px solid var(--rule);z-index:9}
+header.top{border-bottom:1px solid var(--rule)}
+.top-row{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 20px}
+.brand{font-weight:700;letter-spacing:.2px;color:var(--ink);text-decoration:none}
+nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-size:15px}
+nav a:hover{color:var(--ink);text-decoration:underline}
+section{padding:46px 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:0 0 16px;max-width:20ch}
+h2{font-size:clamp(24px,3.4vw,32px);line-height:1.15;margin:0 0 14px}
+h3{font-size:19px;margin:0 0 6px}
+p{margin:0 0 12px;max-width:68ch}
+.kicker{font-size:14px;color:var(--muted);margin:0 0 12px}
+.lede{font-size:20px;color:var(--ink);max-width:56ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--green);color:var(--green);text-decoration:none;font-weight:600}
+.btn.primary{background:var(--green);color:#fff}
+.btn:hover{text-decoration:underline}
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:760px){.g3,.g2{grid-template-columns:1fr}nav a{margin-left:12px}}
+.card{background:var(--sheet);border:1px solid var(--rule);padding:18px}
+.stat{font-size:34px;font-weight:700;color:var(--green);line-height:1.1;margin:0 0 6px}
+.small{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:18px 0 10px;padding:0;list-style:none}
+@media (max-width:900px){.steps{grid-template-columns:1fr}}
+.steps li{background:var(--sheet);border:1px solid var(--rule);padding:16px}
+.steps li.built{background:var(--green);color:#fff;border-color:var(--green)}
+.steps li.partly{border:2px solid var(--green)}
+.steps li.tobuild{border:2px dashed var(--green)}
+.steps b{display:block;font-size:18px;margin-bottom:4px}
+.tag{display:block;font-size:12px;margin-top:8px;opacity:.9}
+.shots{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media (max-width:900px){.shots{grid-template-columns:repeat(2,1fr)}}
+figure{margin:0}
+figure img{width:100%;height:auto;display:block;border:1px solid var(--rule);background:#fff}
+figcaption{font-size:14px;color:var(--muted);margin-top:8px}
+ul.plain{margin:0;padding-left:20px}ul.plain li{margin:4px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px}
+th,td{border:1px solid var(--rule);padding:10px 12px;text-align:left;vertical-align:top;background:var(--sheet)}
+th{background:var(--wash)}
+.note{background:var(--wash);border:1px solid var(--rule);padding:16px 18px}
+footer{padding:30px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid var(--rule)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap top-row">
+<a class="brand" href="#top">EgoTrack · GAVS Hackathon idea</a>
+<nav aria-label="Sections"><a href="#how">How it works</a><a href="#built">Built today</a><a href="#india">India</a><a href="#plan">Plan</a></nav>
+</div></header>
+
+<main id="main">
+<section id="top"><div class="wrap">
+<p class="kicker">GAVS Hackathon · Theme: MSME Finance and Compliance · Idea submission</p>
+<h1>From scattered records to a finance-ready file.</h1>
+<p class="lede">EgoTrack helps a micro business organise its records, shows what is missing, and prepares what a credit option or support scheme asks for. The owner approves every step. It is not a lender.</p>
+<div class="btns">
+<a class="btn primary" href="https://app.egotrack.tech/">Try the live demo</a>
+<a class="btn" href="EgoTrack_GAVS_idea_deck.pdf">Read the idea deck (PDF)</a>
+<a class="btn" href="https://egotrack.tech/">egotrack.tech</a>
+</div>
+</div></section>
+
+<section id="problem"><div class="wrap">
+<h2>The problem</h2>
+<div class="grid g3">
+<div class="card"><h3>Records are scattered</h3><p>Notebooks, receipts, phone notes and memory. Nothing adds up to one picture of the business.</p></div>
+<div class="card"><h3>Performance is hard to show</h3><p>A micro business cannot easily show cash flow, credit given or repayments to anyone outside it.</p></div>
+<div class="card"><h3>Requirements are hard to find</h3><p>What a credit option or scheme asks for sits in many places, and the owner does not know what is missing.</p></div>
+</div>
+<p class="small" style="margin-top:16px">We have 30 merchant interviews and 22 real notebook pages from Lagos. We have no India interviews yet. The Udyam figure of about 7.88 crore registered micro enterprises is a press report of the Ministry of MSME dashboard for May 2026 and should be checked at the source.</p>
+</div></section>
+
+<section id="how"><div class="wrap">
+<h2>How it works</h2>
+<p>Five steps. The first two exist in the working app. The rest are what this challenge would build.</p>
+<ol class="steps">
+<li class="built"><b>1 Capture</b>Voice, text, a photo of a record, or manual entry.<span class="tag">Built: photo and manual. Voice to build.</span></li>
+<li class="built"><b>2 Structure</b>Sales, expenses, customer credit and repayments. Unclear items are asked about, never assumed.<span class="tag">Built</span></li>
+<li class="partly"><b>3 Understand</b>A plain-language summary and a list of missing information.<span class="tag">Partly built: weekly reports exist.</span></li>
+<li class="tobuild"><b>4 Match</b>Compare the profile with published requirements of credit options and schemes.<span class="tag">To build</span></li>
+<li class="tobuild"><b>5 Prepare</b>Action plan, document checklist and draft application details. The owner approves.<span class="tag">To build</span></li>
+</ol>
+<p class="small">Filled: built today. Solid outline: partly built. Dashed outline: to build in this challenge. Everything happens with the owner's consent.</p>
+<div class="note"><b>One rule runs through all five steps:</b> the agent prepares and explains, and the owner decides. It does not lend, rate creditworthiness, promise approval, or submit anything without approval.</div>
+</div></section>
+
+<section id="built"><div class="wrap">
+<h2>Built today</h2>
+<p>A working app with a made-up demo shop. The screens are from the Nigerian build and show naira. No paying customers yet.</p>
+<div class="shots">
+<figure><img src="img/scan.png" alt="Taking a photo of a notebook page" loading="lazy"><figcaption><b>Capture.</b> A photo of a notebook page, or manual entry.</figcaption></figure>
+<figure><img src="img/reviewtop.png" alt="Checking a page before anything counts" loading="lazy"><figcaption><b>Confirm.</b> Code checks every sum. The owner confirms.</figcaption></figure>
+<figure><img src="img/owes.png" alt="Who owes the business money" loading="lazy"><figcaption><b>Credit.</b> Customer credit, part payments and reminders.</figcaption></figure>
+<figure><img src="img/reports.png" alt="Weekly sales and trends" loading="lazy"><figcaption><b>Summarise.</b> Weekly sales, change and credit share.</figcaption></figure>
+</div>
+</div></section>
+
+<section id="agent"><div class="wrap">
+<h2>The agent prepares. The owner decides.</h2>
+<div class="grid g3">
+<div class="card"><h3>What the agent does</h3><p>Explains the business in plain words. Lists what information is missing. Shows what a credit option or scheme asks for, with the official source and date. Organises documents and drafts application details.</p></div>
+<div class="card"><h3>What it will not do</h3><p>Lend, rate creditworthiness, promise or imply approval, submit anything or share personal data without explicit approval, or guess when a record is unclear.</p></div>
+<div class="card"><h3>How we keep it honest</h3><p>Every requirement carries its source link and the date it was read. Simulated integrations are labelled. Out-of-date items are flagged.</p></div>
+</div>
+</div></section>
+
+<section id="india"><div class="wrap">
+<h2>Adapting to India, without pretending we know it</h2>
+<table>
+<tr><th>Need</th><th>Today</th><th>Planned for this challenge</th></tr>
+<tr><td>Voice entry</td><td>Not built</td><td>Speak a sale or expense. The app turns it into a record and asks the owner to confirm.</td></tr>
+<tr><td>Local language</td><td>English only</td><td>One Indian language, chosen with the users we can reach. None promised yet.</td></tr>
+<tr><td>Low bandwidth, entry-level Android</td><td>A web app that installs on a phone. Offline sales wait on the phone.</td><td>Tested on a low-end Android on a weak network.</td></tr>
+<tr><td>Scheme requirements</td><td>Not built</td><td>A small curated set from official sources, each with link and date.</td></tr>
+</table>
+<p style="margin-top:14px">What carries over: scattered records, confirm-before-it-counts, credit tracking and plain summaries. What changes: currency, language, payments, schemes and the rules on data and credit. What we do not know: any India user. The first step is to talk to owners and an adviser who knows the lending side.</p>
+</div></section>
+
+<section id="plan"><div class="wrap">
+<h2>What we would build in the prototype round</h2>
+<ol class="plain" style="padding-left:20px;margin:0 0 14px">
+<li>Pick the problem statement and map the owner's journey from record to application.</li>
+<li>Voice and text entry become structured records. The owner confirms anything unclear.</li>
+<li>The agent writes a plain summary and lists what is missing.</li>
+<li>A checklist for two or three published credit or support options, each with its source.</li>
+<li>An action plan and draft details, demonstrated with real micro business owners.</li>
+</ol>
+<p>We will show a working flow from a spoken or photographed record to a finance-ready summary and checklist. We will not claim loan decisions, approval odds or live government or bank submission. Any integration we cannot access will be simulated and labelled.</p>
+</div></section>
+
+<section id="team"><div class="wrap">
+<h2>The team</h2>
+<p><b>Victor Oluebubechukwu Nwokolo</b>, founder, Lagos. Software engineering student. Built the working product, interviewed Lagos traders, and designed this idea. Finalist at Ecobank InnovateX 2026 for the underlying product. <a href="https://nevodesigns.github.io/">Portfolio</a>.</p>
+<p><b>Alghazali Shuaib</b>, technical co-founder, joining. Backend and mobile.</p>
+<p class="small">We are looking for a mentor who knows micro and small business lending in India, introductions to owners willing to test, and feedback on which published options to cover first. No company is registered yet.</p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+<p>EgoTrack is a record-keeping and preparation tool. It is not a bank or a lender and does not guarantee credit approval. Screens show a made-up shop. Last updated 4 November 2026.</p>
+</div></footer>
+</body>
+</html>
